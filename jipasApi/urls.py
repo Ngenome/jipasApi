@@ -7,5 +7,6 @@ urlpatterns = [
     path('imagelist/', ImageListAll.as_view()),
     path('images/<int:pk>/', ImageDetail.as_view()),
     path('comments/',CommentList.as_view()),
-        path('comments/<int:pk>/', CommentDetail.as_view()),
+    path('comments/<int:pk>/', CommentDetail.as_view()),
+    path('sendemail/',SendEmail.as_view()),
 ]

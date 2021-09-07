@@ -31,4 +31,7 @@ default='project')
     def __str__(self):
         return self.title
 
-  
+class Email(models.Model):
+  name=models.CharField(max_length=50)
+  message=models.TextField()
+  fromEmail=models.EmailField()
