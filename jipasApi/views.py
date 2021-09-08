@@ -58,7 +58,8 @@ class CommentList(generics.ListCreateAPIView):
     serializer_class = CommentSerializer
    # permission_classes=[permissions.AllowAny]
     permission_classes=[permissions.IsAuthenticated]
-
+    def perform_create(self, serializer):
+        serializer.save(owner=self.request.user)
 class SendyEmail(generics.CreateAPIView):
     queryset = Comment.objects.all()
     serializer_class = CommentSerializer

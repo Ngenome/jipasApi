@@ -11,15 +11,10 @@ default='teaching')
     def __str__(self):
         return self.title
 class Comment(models.Model):
-    name= models.CharField(max_length=100)
-    image=models.ImageField(upload_to="images")
     owner =models.ForeignKey(User, related_name='comment',on_delete=models.CASCADE ,null=True)
     comment=models.TextField(unique=True)
-    date_added=models.DateTimeField('date added', auto_now_add=True)
-    likes=models.CharField(max_length=10)
-
-    def __str__(self):
-        return self.name
+    date_added=models.DateTimeField( auto_now_add=True)
+    
 class Image(models.Model):
     title= models.CharField(max_length=100)
     date_added=models.DateTimeField('date added', auto_now_add=True)
