@@ -30,6 +30,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+        'corsheaders',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -38,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'polls',
     'rest_framework',
-    'corsheaders',
+
     'jipasApi',
     'knox',
     'accounts'
@@ -88,13 +89,11 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-CORS_ALLOWED_ORIGINS = [
-    
-    'http://localhost:3000',
-    
-]
-CORS_ORIGINS_ALLOW_ALL=True
 
+#CORS_ORIGINS_ALLOW_ALL=True
+CORS_ALLOWED_ORIGINS = [
+'https://eager-allen-9c5b46.netlify.app'
+]
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -114,7 +113,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
+#CORS_ALLOW_CREDENTIALS =True
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
@@ -132,7 +131,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 MEDIA_ROOT= os.path.join(BASE_DIR, 'media/')
-STATIC_ROOT=os.path.join(BASE_DIR,'static/'  )   
+STATIC_ROOT=os.path.join(BASE_DIR,'static/'  )
 MEDIA_URL = '/media/'
 STATIC_URL = '/static/'
 
