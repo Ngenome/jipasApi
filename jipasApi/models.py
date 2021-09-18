@@ -48,5 +48,5 @@ class Notification(models.Model):
 
 class NotificationToken(models.Model):
     owner = models.ForeignKey(
-        User, related_name='token', on_delete=models.CASCADE)
+        User, related_name='token', on_delete=models.CASCADE, blank=True)
     token = models.CharField(max_length=40)

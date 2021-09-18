@@ -34,7 +34,7 @@ class NotificationSerializer(serializers.Serializer):
         fields = '__all__'
 
 
-class NotificationTokenSerializer(serializers.Serializer):
+class NotificationTokenSerializer(serializers.ModelSerializer):
     class Meta:
         model = NotificationToken
         fields = '__all__'
